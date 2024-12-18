@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batman & Gracie Abrams Riddle Generator</title>
+    <title>Batman & Gracie Abrams Trivia Generator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
             text-align: center;
             padding: 20px;
         }
-        .riddle-box {
+        .trivia-box {
             margin: 20px auto;
             padding: 20px;
             max-width: 600px;
@@ -44,42 +44,51 @@
     </style>
 </head>
 <body>
-    <h1>Batman & Gracie Abrams Riddle Generator</h1>
-    <div class="riddle-box">
-        <p id="riddle">Click the button to get a riddle!</p>
+    <h1>Batman & Gracie Abrams Trivia</h1>
+    <div class="trivia-box">
+        <p id="trivia">Click "Generate Trivia" to start!</p>
         <button id="reveal-btn" style="display: none;" onclick="revealAnswer()">Reveal Answer</button>
         <p id="answer"></p>
     </div>
-    <button onclick="generateRiddle()">Generate Riddle</button>
+    <button onclick="generateTrivia()">Generate Trivia</button>
 
     <script>
-        const riddles = [
-            "What has a cape, fights crime, and is the greatest detective? (Hint: It's not Superman!)",
-            "Who said: 'It's not who I am underneath, but what I do that defines me?'",
-            "What song did Gracie Abrams release that perfectly captures the feeling of missing someone?",
-            "I am vengeance. I am the night. I am...?",
-            "Which Gracie Abrams song talks about the pain of being 'blocked out' by someone?"
+        const triviaQuestions = [
+            {
+                question: "Which movie features the quote: 'Why do we fall? So we can learn to pick ourselves up.'?",
+                answer: "Batman Begins"
+            },
+            {
+                question: "What is Batman's real name?",
+                answer: "Bruce Wayne"
+            },
+            {
+                question: "In which Gracie Abrams song does she sing about feeling 'blocked out'?",
+                answer: "Block Me Out"
+            },
+            {
+                question: "What year did Gracie Abrams release her debut album 'Good Riddance'?",
+                answer: "2023"
+            },
+            {
+                question: "What is the name of Batman's butler and closest confidant?",
+                answer: "Alfred Pennyworth"
+            }
         ];
 
-        const answers = [
-            "Batman!",
-            "Batman in Batman Begins.",
-            "I Miss You, I’m Sorry.",
-            "Batman!",
-            "Block Me Out."
-        ];
-
-        function generateRiddle() {
-            const randomIndex = Math.floor(Math.random() * riddles.length);
-            document.getElementById("riddle").textContent = riddles[randomIndex];
-            document.getElementById("answer").style.display = "none";
-            document.getElementById("answer").textContent = answers[randomIndex];
-            document.getElementById("reveal-btn").style.display = "inline-block";
+        function generateTrivia() {
+            const randomIndex = Math.floor(Math.random() * triviaQuestions.length);
+            const trivia = triviaQuestions[randomIndex];
+            document.getElementById("trivia").textContent = trivia.question; // Show trivia question
+            document.getElementById("answer").style.display = "none"; // Hide answer
+            document.getElementById("answer").textContent = trivia.answer; // Set answer
+            document.getElementById("reveal-btn").style.display = "inline-block"; // Show reveal button
         }
 
         function revealAnswer() {
-            document.getElementById("answer").style.display = "block";
+            document.getElementById("answer").style.display = "block"; // Show answer
         }
     </script>
 </body>
 </html>
+
