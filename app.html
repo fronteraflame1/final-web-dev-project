@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batman & Gracie Abrams Riddle Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .riddle-box {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        button {
+            background-color: #FFD700;
+            color: #1e1e1e;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        h1 {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <h1>Batman & Gracie Abrams Riddle Generator</h1>
+    <div class="riddle-box">
+        <p id="riddle">Click the button to get a riddle!</p>
+    </div>
+    <button onclick="generateRiddle()">Generate Riddle</button>
+
+    <script>
+        const riddles = [
+            "What has a cape, fights crime, and is the greatest detective? (Hint: It's not Superman!)",
+            "Who said: 'It's not who I am underneath, but what I do that defines me?'",
+            "What song did Gracie Abrams release that perfectly captures the feeling of missing someone?",
+            "I am vengeance. I am the night. I am...?",
+            "Which Gracie Abrams song talks about the pain of being 'blocked out' by someone?"
+        ];
+
+        const answers = [
+            "Batman!",
+            "Batman in Batman Begins.",
+            "I Miss You, I’m Sorry.",
+            "Batman!",
+            "Block Me Out."
+        ];
+
+        function generateRiddle() {
+            const randomIndex = Math.floor(Math.random() * riddles.length);
+            const riddleElement = document.getElementById("riddle");
+            riddleElement.innerHTML = `<strong>Riddle:</strong> ${riddles[randomIndex]} <br><br> <em>Answer:</em> ${answers[randomIndex]}`;
+        }
+    </script>
+</body>
+</html>
