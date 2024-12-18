@@ -3,15 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Site</title>
+    <title>Batman & Gracie Abrams Fan Page</title>
     <!-- Add Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1e1e1e; /* Gotham-like black */
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important; /* Batman yellow */
+        }
+        header {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(30, 30, 30, 0.9)), 
+                        url('https://upload.wikimedia.org/wikipedia/en/8/87/Batman_DC_Comics.png'),
+                        url('https://upload.wikimedia.org/wikipedia/commons/9/91/Gracie_Abrams_Sep_2023.jpg');
+            background-size: contain, cover;
+            color: #fff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            padding: 100px 0;
+            text-align: center;
+        }
+        footer {
+            background-color: #222;
+        }
+        .split-content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .split-content div {
+            flex: 1 1 45%;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .split-content div img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">My Website</a>
+            <a class="navbar-brand" href="#">Batman & Gracie</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,22 +66,35 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1>Welcome to My Final Project Website</h1>
-            <p class="lead">Exploring my passion for Batman, web development, and beyond!</p>
-        </div>
+    <header>
+        <h1>Welcome to the Batman & Gracie Abrams Fan Page</h1>
+        <p class="lead">Celebrating the brilliance of Gotham’s hero and the soulful music of Gracie Abrams.</p>
     </header>
 
     <!-- Main Content -->
     <div class="container my-5">
-        <h2>About This Project</h2>
-        <p>This site was created as part of my final web development project. Explore my skills, passions, and a fun Batman-themed scratch page!</p>
+        <h2>Two Worlds Collide</h2>
+        <p>Batman represents resilience and justice, while Gracie Abrams brings heartfelt emotion and raw storytelling to life. Together, they inspire a unique blend of creativity and passion.</p>
+
+        <!-- Split Content Section -->
+        <div class="split-content">
+            <div>
+                <h3>Batman</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/en/8/87/Batman_DC_Comics.png" alt="Batman">
+                <p>The Dark Knight is a symbol of hope, strength, and determination. Explore his legacy through comics, movies, and more.</p>
+            </div>
+            <div>
+                <h3>Gracie Abrams</h3>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Gracie_Abrams_Sep_2023.jpg" alt="Gracie Abrams">
+                <p>Gracie’s music speaks to the heart, exploring themes of love, loss, and self-discovery. A modern-day storyteller.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Frontera Flame. All rights reserved.</p>
+    <footer class="text-white text-center py-3">
+        <p>&copy; 2024 Batman & Gracie Abrams Fan Page. All rights reserved.</p>
     </footer>
 </body>
 </html>
+
