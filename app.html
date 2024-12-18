@@ -36,12 +36,19 @@
         h1 {
             color: #FFD700;
         }
+        #answer {
+            margin-top: 10px;
+            color: #FFD700;
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
     <h1>Batman & Gracie Abrams Riddle Generator</h1>
     <div class="riddle-box">
         <p id="riddle">Click the button to get a riddle!</p>
+        <button id="reveal-btn" style="display: none;" onclick="revealAnswer()">Reveal Answer</button>
+        <p id="answer"></p>
     </div>
     <button onclick="generateRiddle()">Generate Riddle</button>
 
@@ -64,8 +71,14 @@
 
         function generateRiddle() {
             const randomIndex = Math.floor(Math.random() * riddles.length);
-            const riddleElement = document.getElementById("riddle");
-            riddleElement.innerHTML = `<strong>Riddle:</strong> ${riddles[randomIndex]} <br><br> <em>Answer:</em> ${answers[randomIndex]}`;
+            document.getElementById("riddle").textContent = riddles[randomIndex];
+            document.getElementById("answer").style.display = "none";
+            document.getElementById("answer").textContent = answers[randomIndex];
+            document.getElementById("reveal-btn").style.display = "inline-block";
+        }
+
+        function revealAnswer() {
+            document.getElementById("answer").style.display = "block";
         }
     </script>
 </body>
